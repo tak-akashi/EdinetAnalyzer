@@ -1,0 +1,506 @@
+{
+  "test_summary": {
+    "timestamp": "2025-07-13T16:06:56.495857",
+    "total_tests": 12,
+    "successful_tests": 12,
+    "total_time": 25.787004709243774
+  },
+  "detailed_results": [
+    {
+      "name": "楽天グループ_総資産",
+      "category": "large_companies",
+      "query": "楽天グループの最新の総資産を教えてください",
+      "expected_keywords": [
+        "楽天",
+        "総資産",
+        "円",
+        "億円",
+        "兆円"
+      ],
+      "timestamp": "2025-07-13T16:06:32.446520",
+      "success": true,
+      "execution_time": 0.0,
+      "response": {
+        "messages": [],
+        "query": "楽天グループの最新の総資産を教えてください",
+        "company_name": null,
+        "search_date": null,
+        "document_type": null,
+        "analysis_type": null,
+        "search_terms": null,
+        "search_results": null,
+        "downloaded_files": null,
+        "xbrl_analysis": null,
+        "comparison_analysis": null,
+        "final_answer": "申し訳ございません。システムエラーが発生しました。\\n\\nエラー詳細: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "error_message": "エージェント実行エラー: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "retry_count": 0,
+        "tool_calls": [],
+        "execution_time": 0.0001289844512939453,
+        "next_action": null
+      },
+      "error": null,
+      "keyword_matches": [],
+      "analysis": {
+        "length": 147,
+        "has_numbers": false,
+        "keyword_coverage": 0.0,
+        "completeness_score": 0.2
+      }
+    },
+    {
+      "name": "ソフトバンクグループ_純利益",
+      "category": "large_companies",
+      "query": "ソフトバンクグループの純利益を調べてください",
+      "expected_keywords": [
+        "ソフトバンク",
+        "純利益",
+        "円",
+        "億円"
+      ],
+      "timestamp": "2025-07-13T16:06:34.450986",
+      "success": true,
+      "execution_time": 0.0,
+      "response": {
+        "messages": [],
+        "query": "ソフトバンクグループの純利益を調べてください",
+        "company_name": null,
+        "search_date": null,
+        "document_type": null,
+        "analysis_type": null,
+        "search_terms": null,
+        "search_results": null,
+        "downloaded_files": null,
+        "xbrl_analysis": null,
+        "comparison_analysis": null,
+        "final_answer": "申し訳ございません。システムエラーが発生しました。\\n\\nエラー詳細: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "error_message": "エージェント実行エラー: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "retry_count": 0,
+        "tool_calls": [],
+        "execution_time": 0.00012302398681640625,
+        "next_action": null
+      },
+      "error": null,
+      "keyword_matches": [],
+      "analysis": {
+        "length": 147,
+        "has_numbers": false,
+        "keyword_coverage": 0.0,
+        "completeness_score": 0.2
+      }
+    },
+    {
+      "name": "トヨタ自動車_売上高",
+      "category": "large_companies",
+      "query": "トヨタ自動車の最新の売上高はいくらですか？",
+      "expected_keywords": [
+        "トヨタ",
+        "売上高",
+        "円",
+        "兆円"
+      ],
+      "timestamp": "2025-07-13T16:06:36.456155",
+      "success": true,
+      "execution_time": 0.0,
+      "response": {
+        "messages": [],
+        "query": "トヨタ自動車の最新の売上高はいくらですか？",
+        "company_name": null,
+        "search_date": null,
+        "document_type": null,
+        "analysis_type": null,
+        "search_terms": null,
+        "search_results": null,
+        "downloaded_files": null,
+        "xbrl_analysis": null,
+        "comparison_analysis": null,
+        "final_answer": "申し訳ございません。システムエラーが発生しました。\\n\\nエラー詳細: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "error_message": "エージェント実行エラー: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "retry_count": 0,
+        "tool_calls": [],
+        "execution_time": 0.00010609626770019531,
+        "next_action": null
+      },
+      "error": null,
+      "keyword_matches": [],
+      "analysis": {
+        "length": 147,
+        "has_numbers": false,
+        "keyword_coverage": 0.0,
+        "completeness_score": 0.2
+      }
+    },
+    {
+      "name": "任天堂_財務状況",
+      "category": "large_companies",
+      "query": "任天堂の財務状況を分析してください",
+      "expected_keywords": [
+        "任天堂",
+        "財務",
+        "資産",
+        "利益",
+        "売上"
+      ],
+      "timestamp": "2025-07-13T16:06:38.461308",
+      "success": true,
+      "execution_time": 0.0,
+      "response": {
+        "messages": [],
+        "query": "任天堂の財務状況を分析してください",
+        "company_name": null,
+        "search_date": null,
+        "document_type": null,
+        "analysis_type": null,
+        "search_terms": null,
+        "search_results": null,
+        "downloaded_files": null,
+        "xbrl_analysis": null,
+        "comparison_analysis": null,
+        "final_answer": "申し訳ございません。システムエラーが発生しました。\\n\\nエラー詳細: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "error_message": "エージェント実行エラー: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "retry_count": 0,
+        "tool_calls": [],
+        "execution_time": 0.00011181831359863281,
+        "next_action": null
+      },
+      "error": null,
+      "keyword_matches": [],
+      "analysis": {
+        "length": 147,
+        "has_numbers": false,
+        "keyword_coverage": 0.0,
+        "completeness_score": 0.2
+      }
+    },
+    {
+      "name": "楽天_表記ゆれ",
+      "category": "name_variants",
+      "query": "楽天の最新決算について教えて",
+      "expected_keywords": [
+        "楽天",
+        "決算",
+        "円"
+      ],
+      "timestamp": "2025-07-13T16:06:40.461724",
+      "success": true,
+      "execution_time": 0.0,
+      "response": {
+        "messages": [],
+        "query": "楽天の最新決算について教えて",
+        "company_name": null,
+        "search_date": null,
+        "document_type": null,
+        "analysis_type": null,
+        "search_terms": null,
+        "search_results": null,
+        "downloaded_files": null,
+        "xbrl_analysis": null,
+        "comparison_analysis": null,
+        "final_answer": "申し訳ございません。システムエラーが発生しました。\\n\\nエラー詳細: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "error_message": "エージェント実行エラー: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "retry_count": 0,
+        "tool_calls": [],
+        "execution_time": 9.775161743164062e-05,
+        "next_action": null
+      },
+      "error": null,
+      "keyword_matches": [],
+      "analysis": {
+        "length": 147,
+        "has_numbers": false,
+        "keyword_coverage": 0.0,
+        "completeness_score": 0.2
+      }
+    },
+    {
+      "name": "ソフトバンク_表記ゆれ",
+      "category": "name_variants",
+      "query": "ソフトバンクの財務データを分析して",
+      "expected_keywords": [
+        "ソフトバンク",
+        "財務",
+        "円"
+      ],
+      "timestamp": "2025-07-13T16:06:42.465079",
+      "success": true,
+      "execution_time": 0.0,
+      "response": {
+        "messages": [],
+        "query": "ソフトバンクの財務データを分析して",
+        "company_name": null,
+        "search_date": null,
+        "document_type": null,
+        "analysis_type": null,
+        "search_terms": null,
+        "search_results": null,
+        "downloaded_files": null,
+        "xbrl_analysis": null,
+        "comparison_analysis": null,
+        "final_answer": "申し訳ございません。システムエラーが発生しました。\\n\\nエラー詳細: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "error_message": "エージェント実行エラー: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "retry_count": 0,
+        "tool_calls": [],
+        "execution_time": 0.00011396408081054688,
+        "next_action": null
+      },
+      "error": null,
+      "keyword_matches": [],
+      "analysis": {
+        "length": 147,
+        "has_numbers": false,
+        "keyword_coverage": 0.0,
+        "completeness_score": 0.2
+      }
+    },
+    {
+      "name": "楽天_複数指標",
+      "category": "complex_queries",
+      "query": "楽天グループの総資産、純利益、自己資本比率を教えてください",
+      "expected_keywords": [
+        "楽天",
+        "総資産",
+        "純利益",
+        "自己資本比率",
+        "円"
+      ],
+      "timestamp": "2025-07-13T16:06:44.470244",
+      "success": true,
+      "execution_time": 0.0,
+      "response": {
+        "messages": [],
+        "query": "楽天グループの総資産、純利益、自己資本比率を教えてください",
+        "company_name": null,
+        "search_date": null,
+        "document_type": null,
+        "analysis_type": null,
+        "search_terms": null,
+        "search_results": null,
+        "downloaded_files": null,
+        "xbrl_analysis": null,
+        "comparison_analysis": null,
+        "final_answer": "申し訳ございません。システムエラーが発生しました。\\n\\nエラー詳細: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "error_message": "エージェント実行エラー: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "retry_count": 0,
+        "tool_calls": [],
+        "execution_time": 9.918212890625e-05,
+        "next_action": null
+      },
+      "error": null,
+      "keyword_matches": [],
+      "analysis": {
+        "length": 147,
+        "has_numbers": false,
+        "keyword_coverage": 0.0,
+        "completeness_score": 0.2
+      }
+    },
+    {
+      "name": "財務比率分析",
+      "category": "complex_queries",
+      "query": "トヨタ自動車の収益性指標（ROE、ROA等）を分析してください",
+      "expected_keywords": [
+        "トヨタ",
+        "ROE",
+        "ROA",
+        "収益性",
+        "%"
+      ],
+      "timestamp": "2025-07-13T16:06:46.471688",
+      "success": true,
+      "execution_time": 0.0,
+      "response": {
+        "messages": [],
+        "query": "トヨタ自動車の収益性指標（ROE、ROA等）を分析してください",
+        "company_name": null,
+        "search_date": null,
+        "document_type": null,
+        "analysis_type": null,
+        "search_terms": null,
+        "search_results": null,
+        "downloaded_files": null,
+        "xbrl_analysis": null,
+        "comparison_analysis": null,
+        "final_answer": "申し訳ございません。システムエラーが発生しました。\\n\\nエラー詳細: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "error_message": "エージェント実行エラー: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "retry_count": 0,
+        "tool_calls": [],
+        "execution_time": 9.918212890625e-05,
+        "next_action": null
+      },
+      "error": null,
+      "keyword_matches": [],
+      "analysis": {
+        "length": 147,
+        "has_numbers": false,
+        "keyword_coverage": 0.0,
+        "completeness_score": 0.2
+      }
+    },
+    {
+      "name": "ニトリ_小売業",
+      "category": "mid_companies",
+      "query": "ニトリホールディングスの業績について教えてください",
+      "expected_keywords": [
+        "ニトリ",
+        "業績",
+        "売上",
+        "利益"
+      ],
+      "timestamp": "2025-07-13T16:06:48.476832",
+      "success": true,
+      "execution_time": 0.0,
+      "response": {
+        "messages": [],
+        "query": "ニトリホールディングスの業績について教えてください",
+        "company_name": null,
+        "search_date": null,
+        "document_type": null,
+        "analysis_type": null,
+        "search_terms": null,
+        "search_results": null,
+        "downloaded_files": null,
+        "xbrl_analysis": null,
+        "comparison_analysis": null,
+        "final_answer": "申し訳ございません。システムエラーが発生しました。\\n\\nエラー詳細: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "error_message": "エージェント実行エラー: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "retry_count": 0,
+        "tool_calls": [],
+        "execution_time": 0.00010323524475097656,
+        "next_action": null
+      },
+      "error": null,
+      "keyword_matches": [],
+      "analysis": {
+        "length": 147,
+        "has_numbers": false,
+        "keyword_coverage": 0.0,
+        "completeness_score": 0.2
+      }
+    },
+    {
+      "name": "存在しない企業",
+      "category": "error_cases",
+      "query": "架空株式会社の財務データを教えてください",
+      "expected_keywords": [
+        "見つかりません",
+        "存在しない",
+        "検索",
+        "エラー"
+      ],
+      "timestamp": "2025-07-13T16:06:50.481979",
+      "success": true,
+      "execution_time": 0.0,
+      "response": {
+        "messages": [],
+        "query": "架空株式会社の財務データを教えてください",
+        "company_name": null,
+        "search_date": null,
+        "document_type": null,
+        "analysis_type": null,
+        "search_terms": null,
+        "search_results": null,
+        "downloaded_files": null,
+        "xbrl_analysis": null,
+        "comparison_analysis": null,
+        "final_answer": "申し訳ございません。システムエラーが発生しました。\\n\\nエラー詳細: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "error_message": "エージェント実行エラー: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "retry_count": 0,
+        "tool_calls": [],
+        "execution_time": 8.988380432128906e-05,
+        "next_action": null
+      },
+      "error": null,
+      "keyword_matches": [
+        "エラー"
+      ],
+      "analysis": {
+        "length": 147,
+        "has_numbers": false,
+        "keyword_coverage": 0.25,
+        "completeness_score": 0.2
+      }
+    },
+    {
+      "name": "曖昧な企業名",
+      "category": "error_cases",
+      "query": "ABC会社の売上を教えて",
+      "expected_keywords": [
+        "特定",
+        "明確",
+        "検索",
+        "見つかりません"
+      ],
+      "timestamp": "2025-07-13T16:06:52.487111",
+      "success": true,
+      "execution_time": 0.0,
+      "response": {
+        "messages": [],
+        "query": "ABC会社の売上を教えて",
+        "company_name": null,
+        "search_date": null,
+        "document_type": null,
+        "analysis_type": null,
+        "search_terms": null,
+        "search_results": null,
+        "downloaded_files": null,
+        "xbrl_analysis": null,
+        "comparison_analysis": null,
+        "final_answer": "申し訳ございません。システムエラーが発生しました。\\n\\nエラー詳細: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "error_message": "エージェント実行エラー: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "retry_count": 0,
+        "tool_calls": [],
+        "execution_time": 0.00020813941955566406,
+        "next_action": null
+      },
+      "error": null,
+      "keyword_matches": [],
+      "analysis": {
+        "length": 147,
+        "has_numbers": false,
+        "keyword_coverage": 0.0,
+        "completeness_score": 0.2
+      }
+    },
+    {
+      "name": "期間指定",
+      "category": "date_queries",
+      "query": "楽天グループの最新期の財務データを分析してください",
+      "expected_keywords": [
+        "楽天",
+        "最新",
+        "期",
+        "財務"
+      ],
+      "timestamp": "2025-07-13T16:06:54.492367",
+      "success": true,
+      "execution_time": 0.0,
+      "response": {
+        "messages": [],
+        "query": "楽天グループの最新期の財務データを分析してください",
+        "company_name": null,
+        "search_date": null,
+        "document_type": null,
+        "analysis_type": null,
+        "search_terms": null,
+        "search_results": null,
+        "downloaded_files": null,
+        "xbrl_analysis": null,
+        "comparison_analysis": null,
+        "final_answer": "申し訳ございません。システムエラーが発生しました。\\n\\nエラー詳細: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "error_message": "エージェント実行エラー: Checkpointer requires one or more of the following 'configurable' keys: thread_id, checkpoint_ns, checkpoint_id",
+        "retry_count": 0,
+        "tool_calls": [],
+        "execution_time": 0.00010275840759277344,
+        "next_action": null
+      },
+      "error": null,
+      "keyword_matches": [],
+      "analysis": {
+        "length": 147,
+        "has_numbers": false,
+        "keyword_coverage": 0.0,
+        "completeness_score": 0.2
+      }
+    }
+  ]
+}
