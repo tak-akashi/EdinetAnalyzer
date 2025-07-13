@@ -1,0 +1,230 @@
+{
+  "investment_trust": {
+    "call_loans": {
+      "element_ids": [
+        "jppfs_cor:CallLoansCAFND"
+      ],
+      "display_name": "コール・ローン",
+      "context_priority": [
+        "CurrentYearInstant",
+        "Prior1YearInstant"
+      ],
+      "member_priority": [
+        "NonConsolidatedMember"
+      ]
+    },
+    "investment_securities": {
+      "element_ids": [
+        "jppfs_cor:SecurityInvestmentTrustBeneficiarySecuritiesCAFND",
+        "jppfs_cor:SecurityInvestmentTrustBeneficiarySecuritiesCA"
+      ],
+      "display_name": "投資信託受益証券",
+      "context_priority": [
+        "CurrentYearInstant",
+        "Prior1YearInstant"
+      ],
+      "member_priority": [
+        "NonConsolidatedMember"
+      ]
+    },
+    "total_assets": {
+      "element_ids": [
+        "jppfs_cor:Assets",
+        "jppfs_cor:TotalAssets"
+      ],
+      "display_name": "資産合計",
+      "context_priority": [
+        "CurrentYearInstant",
+        "Prior1YearInstant"
+      ],
+      "member_priority": [
+        "NonConsolidatedMember"
+      ]
+    },
+    "net_assets": {
+      "element_ids": [
+        "jppfs_cor:NetAssets",
+        "jppfs_cor:Equity"
+      ],
+      "display_name": "純資産",
+      "context_priority": [
+        "CurrentYearInstant",
+        "Prior1YearInstant"
+      ],
+      "member_priority": [
+        "NonConsolidatedMember"
+      ]
+    },
+    "profit_loss_securities": {
+      "element_ids": [
+        "jppfs_cor:ProfitAndLossOnBuyingAndSellingOfSecuritiesAndOtherOIFND"
+      ],
+      "display_name": "有価証券売買損益",
+      "context_priority": [
+        "CurrentYearDuration",
+        "Prior1YearDuration"
+      ],
+      "member_priority": [
+        "NonConsolidatedMember"
+      ]
+    }
+  },
+  "general_company": {
+    "net_sales": {
+      "element_ids": [
+        "jpcrp_cor:NetSales",
+        "jpfr-t-qci:NetSales",
+        "jpcrp_cor:RevenueIFRS"
+      ],
+      "display_name": "売上高",
+      "context_priority": [
+        "CurrentYearDuration",
+        "Prior1YearDuration"
+      ],
+      "member_priority": [
+        "ConsolidatedMember",
+        "NonConsolidatedMember"
+      ]
+    },
+    "operating_income": {
+      "element_ids": [
+        "jpcrp_cor:OperatingIncome",
+        "jpfr-t-qci:OperatingIncome",
+        "jpcrp_cor:OperatingProfitIFRS"
+      ],
+      "display_name": "営業利益",
+      "context_priority": [
+        "CurrentYearDuration",
+        "Prior1YearDuration"
+      ],
+      "member_priority": [
+        "ConsolidatedMember",
+        "NonConsolidatedMember"
+      ]
+    },
+    "ordinary_income": {
+      "element_ids": [
+        "jpcrp_cor:OrdinaryIncome",
+        "jpfr-t-qci:OrdinaryIncome"
+      ],
+      "display_name": "経常利益",
+      "context_priority": [
+        "CurrentYearDuration",
+        "Prior1YearDuration"
+      ],
+      "member_priority": [
+        "ConsolidatedMember",
+        "NonConsolidatedMember"
+      ]
+    },
+    "net_income": {
+      "element_ids": [
+        "jpcrp_cor:ProfitLoss",
+        "jpfr-t-qci:ProfitLoss",
+        "jpcrp_cor:ProfitLossAttributableToOwnersOfParent",
+        "jpcrp_cor:NetIncome"
+      ],
+      "display_name": "当期純利益",
+      "context_priority": [
+        "CurrentYearDuration",
+        "Prior1YearDuration"
+      ],
+      "member_priority": [
+        "ConsolidatedMember",
+        "NonConsolidatedMember"
+      ]
+    },
+    "total_assets": {
+      "element_ids": [
+        "jpcrp_cor:Assets",
+        "jpfr-t-qci:Assets",
+        "jpcrp_cor:TotalAssets"
+      ],
+      "display_name": "資産合計",
+      "context_priority": [
+        "CurrentYearInstant",
+        "Prior1YearInstant"
+      ],
+      "member_priority": [
+        "ConsolidatedMember",
+        "NonConsolidatedMember"
+      ]
+    },
+    "total_liabilities": {
+      "element_ids": [
+        "jpcrp_cor:Liabilities",
+        "jpfr-t-qci:Liabilities",
+        "jpcrp_cor:TotalLiabilities"
+      ],
+      "display_name": "負債合計",
+      "context_priority": [
+        "CurrentYearInstant",
+        "Prior1YearInstant"
+      ],
+      "member_priority": [
+        "ConsolidatedMember",
+        "NonConsolidatedMember"
+      ]
+    },
+    "net_assets": {
+      "element_ids": [
+        "jpcrp_cor:NetAssets",
+        "jpfr-t-qci:NetAssets",
+        "jpcrp_cor:Equity"
+      ],
+      "display_name": "純資産合計",
+      "context_priority": [
+        "CurrentYearInstant",
+        "Prior1YearInstant"
+      ],
+      "member_priority": [
+        "ConsolidatedMember",
+        "NonConsolidatedMember"
+      ]
+    }
+  },
+  "bank": {
+    "ordinary_income": {
+      "element_ids": [
+        "jpbank_cor:OrdinaryIncome"
+      ],
+      "display_name": "経常利益",
+      "context_priority": [
+        "CurrentYearDuration",
+        "Prior1YearDuration"
+      ],
+      "member_priority": [
+        "ConsolidatedMember",
+        "NonConsolidatedMember"
+      ]
+    },
+    "ordinary_business_profit": {
+      "element_ids": [
+        "jpbank_cor:OrdinaryBusinessProfit"
+      ],
+      "display_name": "業務純益",
+      "context_priority": [
+        "CurrentYearDuration",
+        "Prior1YearDuration"
+      ],
+      "member_priority": [
+        "ConsolidatedMember",
+        "NonConsolidatedMember"
+      ]
+    },
+    "total_assets": {
+      "element_ids": [
+        "jpbank_cor:Assets"
+      ],
+      "display_name": "資産の部合計",
+      "context_priority": [
+        "CurrentYearInstant",
+        "Prior1YearInstant"
+      ],
+      "member_priority": [
+        "ConsolidatedMember",
+        "NonConsolidatedMember"
+      ]
+    }
+  }
+}
