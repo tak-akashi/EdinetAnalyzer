@@ -4,6 +4,7 @@ EDINET分析エージェントのノード実装
 
 import json
 import os
+from datetime import date
 from typing import Dict, Any, Optional
 from langchain_core.language_models import BaseLLM
 from langchain_core.messages import HumanMessage
@@ -11,7 +12,8 @@ from langchain_core.messages import HumanMessage
 from .state import EdinetAgentState, update_state, add_tool_call
 from .langchain_tools import (
     EdinetSearchTool,
-    EdinetDownloadTool, 
+    EdinetDownloadTool,
+    EdinetMultiDateSearchTool,
     XbrlAnalysisTool,
     XbrlComparisonTool
 )
@@ -28,28 +30,54 @@ class EdinetAgentNodes:
         self.llm = llm
         
         # ツールの初期化
+        self.search_tool = None
+        self.multi_search_tool = None
+        self.download_tool = None
+        self.analysis_tool = None
+        self.comparison_tool = None
+        
         try:
             self.search_tool = EdinetSearchTool()
-            self.download_tool = EdinetDownloadTool()
-            self.analysis_tool = XbrlAnalysisTool()
-            self.comparison_tool = XbrlComparisonTool()
+            print("EdinetSearchTool initialized successfully")
         except Exception as e:
-            print(f"Warning: Tools initialization failed: {e}")
-            self.search_tool = None
-            self.download_tool = None
-            self.analysis_tool = None
-            self.comparison_tool = None
+            print(f"Failed to initialize EdinetSearchTool: {e}")
+            
+        try:
+            self.multi_search_tool = EdinetMultiDateSearchTool()
+            print("EdinetMultiDateSearchTool initialized successfully")
+        except Exception as e:
+            print(f"Failed to initialize EdinetMultiDateSearchTool: {e}")
+            
+        try:
+            self.download_tool = EdinetDownloadTool()
+            print("EdinetDownloadTool initialized successfully")
+        except Exception as e:
+            print(f"Failed to initialize EdinetDownloadTool: {e}")
+            
+        try:
+            self.analysis_tool = XbrlAnalysisTool()
+            print("XbrlAnalysisTool initialized successfully")
+        except Exception as e:
+            print(f"Failed to initialize XbrlAnalysisTool: {e}")
+            
+        try:
+            self.comparison_tool = XbrlComparisonTool()
+            print("XbrlComparisonTool initialized successfully")
+        except Exception as e:
+            print(f"Failed to initialize XbrlComparisonTool: {e}")
     
     def query_analyzer_node(self, state: EdinetAgentState) -> EdinetAgentState:
         """質問解析ノード"""
         try:
             query = state["query"]
             
-            # LLMに質問解析を依頼
-            analysis_prompt = f"""
+            # LLMに質問解析を依頼（日本語文字列のエンコーディング問題を回避）
+            current_date = date.today().strftime("%Y-%m-%d")
+            analysis_prompt = """
             以下のユーザーの質問を分析し、JSON形式で情報を抽出してください。
-
-            質問: {query}
+            
+            今日の日付: {}
+            質問: {}
 
             以下の形式でJSONを返してください：
             {{
@@ -58,17 +86,23 @@ class EdinetAgentNodes:
                 "document_type": "書類種別（デフォルト：有価証券報告書）",
                 "analysis_type": "分析タイプ（financial/comparison/search）"
             }}
-            """
+            """.format(current_date, query)
             
             response = self.llm.invoke([HumanMessage(content=analysis_prompt)])
             
             try:
-                # JSONレスポンスをパース
-                analysis_result = json.loads(response.content)
+                # JSONレスポンスをパース（マークダウンのコードブロックを除去）
+                content = response.content.strip()
+                if content.startswith("```json"):
+                    content = content.replace("```json", "").replace("```", "").strip()
+                elif content.startswith("```"):
+                    content = content.replace("```", "").strip()
                 
-                # デフォルト値の設定
+                analysis_result = json.loads(content)
+                
+                # デフォルト値の設定（現在日付を使用）
                 company_name = analysis_result.get("company_name")
-                search_date = analysis_result.get("search_date", "2024-07-10")
+                search_date = analysis_result.get("search_date", date.today().strftime("%Y-%m-%d"))
                 document_type = analysis_result.get("document_type", "有価証券報告書")
                 analysis_type = analysis_result.get("analysis_type", "financial")
                 
@@ -109,36 +143,56 @@ class EdinetAgentNodes:
                     next_action="error_handler"
                 )
             
-            search_date = state.get("search_date", "2024-07-10")
+            search_date = state.get("search_date", date.today().strftime("%Y-%m-%d"))
             document_type = state.get("document_type", "有価証券報告書")
             
-            if not self.search_tool:
+            if not self.multi_search_tool:
                 return update_state(
                     state,
-                    error_message="検索ツールが初期化されていません",
+                    error_message="複数日付検索ツールが初期化されていません",
                     next_action="error_handler"
                 )
             
-            # EDINET検索実行
-            search_result = self.search_tool._run(
+            # 複数日付遡及検索を実行
+            search_result = self.multi_search_tool._run(
                 company_name=company_name,
-                date=search_date,
-                document_type=document_type
+                document_type=document_type,
+                max_days_back=90,
+                priority_days=[7, 30, 90]
             )
             
             try:
                 result_data = json.loads(search_result)
                 
-                if result_data.get("success") and result_data.get("documents"):
+                if result_data.get("success") and result_data.get("all_documents"):
+                    # 検索成功 - 最新の書類を使用
                     return update_state(
                         state,
-                        search_results=result_data["documents"],
+                        search_results=result_data["all_documents"],
+                        search_date=result_data.get("latest_document", {}).get("search_date", search_date),
                         next_action="document_download"
                     )
                 else:
+                    # 複数日付検索で見つからない場合、従来の単一日付検索にフォールバック
+                    if self.search_tool:
+                        fallback_result = self.search_tool._run(
+                            company_name=company_name,
+                            date=search_date,
+                            document_type=document_type
+                        )
+                        fallback_data = json.loads(fallback_result)
+                        
+                        if fallback_data.get("success") and fallback_data.get("documents"):
+                            return update_state(
+                                state,
+                                search_results=fallback_data["documents"],
+                                next_action="document_download"
+                            )
+                    
                     return update_state(
                         state,
-                        next_action="no_documents_found"
+                        error_message=f"企業「{company_name}」の{document_type}が見つかりませんでした",
+                        next_action="error_handler"
                     )
                     
             except json.JSONDecodeError:

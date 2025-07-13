@@ -120,10 +120,24 @@ class EdinetApi:
             return False
 
 if __name__ == '__main__':
+    import argparse
+    
+    # コマンドライン引数の設定
+    parser = argparse.ArgumentParser(description='EDINET APIから書類を取得・ダウンロード')
+    parser.add_argument('--date', '-d', type=str, help='取得対象の日付 (YYYY-MM-DD形式)', default=None)
+    parser.add_argument('--type', '-t', type=int, choices=[1, 2], help='書類種別 (1:提出本文書及び監査報告書、2:PDF)', default=2)
+    
+    args = parser.parse_args()
+    
+    if args.date:
+        print(f"指定された日付: {args.date}")
+    else:
+        print("日付が指定されていません。前日の日付を使用します。")
+    
     try:
         api = EdinetApi()
-        # type=2 (PDF) でリストを取得
-        documents_res = api.get_documents_list(type=2) 
+        # 指定された引数でリストを取得
+        documents_res = api.get_documents_list(date=args.date, type=args.type) 
         
         if not (documents_res and documents_res.get("results")):
             print("書類リストの取得に失敗したか、対象の書類がありません。")
